@@ -6,9 +6,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Explanation from "./Explanation";
 import Related from "./Related";
 import Login from "./Login";
+
+import CodeDiff from "react-code-diff-lite";
+
 import Result from "./Result";
 
 function App() {
+
+
+
   return (
     <BrowserRouter>
       <div>
@@ -21,14 +27,13 @@ function App() {
                   <ProblemList />
                   <Explanation title="asdf" />
                   <Result />
+
                 </>
               }
             />
 
-            <Route path="/Problemlist" element={<ProblemList />} />
-            <Route path="/hhg" element={<Left />} />
+            <Route path="/problems/:no" element={<Left />} />
             <Route path="/login" element={<Login />} />
-            {/* <Route path="/problems/" element={<ProblemDetail />} /> */}
           </Routes>
         </div>
       </div>
