@@ -8,8 +8,11 @@ import { useParams } from "react-router-dom";
 import MyEditor from './MyEditor';
 
 import SplitPane, { Pane } from 'react-split-pane';
-import Explanation from './Explanation';
 import Result from './Result';
+
+
+
+
 
 function Left() {
     const [state, setState] = useState(
@@ -43,14 +46,14 @@ function Left() {
     }, []);
 
     return (
-        <SplitPane split="vertical" defaultSize={600}>
-            <Pane>
+        <SplitPane split="vertical" minSize={300} defaultSize={700} style={{ position: 'relative', overflow: 'hidden' }} >
+            <Pane style={{ height: '500vh', overflowY: 'scroll', overflowX: 'hidden' }}>
                 <Statement description={state.problemInfo.description} restrictions={state.problemInfo.restrictions} />
                 <Testcase testCases={state.testCases} />
             </Pane>
 
             <Pane>
-                <MyEditor />
+                <MyEditor no={no} />
             </Pane>
 
 

@@ -12,13 +12,6 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-#chart {
-  display: inline-block;
-  vertical-align: center;
-  margin-left: 30vw;
-  margin-right: 30vw;
-  position: relative;
-}
 
 .related {
   background-color: grey;
@@ -31,10 +24,12 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
 .explain h1 {
   background-color: grey;
   font-size: 2rem;
@@ -43,6 +38,7 @@
   width: 50vh;
   margin: auto;
 }
+
 .explain h2 {
   background-color: grey;
   font-size: 2rem;
@@ -51,6 +47,7 @@
   width: 50vh;
   margin: auto;
 }
+
 .Login {
   margin: auto;
   text-align: center;
@@ -58,6 +55,7 @@
   display: flex;
   justify-content: center;
 }
+
 .Login {
   height: 20vh;
   align-items: center;
@@ -67,6 +65,7 @@
   position: relative;
   margin-top: 40vh;
 }
+
 #button {
   background-color: #3e77e0;
   color: white;
@@ -75,18 +74,23 @@
   border-radius: 10%;
   margin-left: 0.52vh;
 }
+
 body {
   height: 100vh;
 }
+
 #email {
   margin-bottom: 0.5vh;
 }
+
 #form {
   display: table;
 }
+
 .passr {
   display: table-row;
 }
+
 #new {
   margin-top: 1vh;
   height: auto;
@@ -94,6 +98,7 @@ body {
   color: grey;
   text-decoration: underline;
 }
+
 #del {
   margin-top: 1vh;
   height: auto;
@@ -105,10 +110,12 @@ body {
   font-size: 2rem;
   margin-top: -0.5vh;
 }
+
 #new1 {
   margin-top: 1vh;
   visibility: collapse;
 }
+
 .popup {
   position: absolute;
   width: 50vh;
@@ -116,41 +123,51 @@ body {
   background-color: #fafafa;
   margin: auto;
 }
+
 #form1 {
   margin: auto;
 }
+
 .passr2 {
   margin-left: 5vh;
   margin-bottom: 10vh;
 }
+
 .input {
   margin: auto;
 }
+
 .sign {
   margin-top: 5vh;
   font-size: 2rem;
   margin-bottom: 7vh;
 }
+
 .header {
   margin: 0px;
   background-color: #a0ca4e;
   color: white;
 }
+
 #root {
   margin: 0px;
 }
+
 .banner {
   background-color: #a0ca4e;
   color: white;
   text-align: center;
 }
+
 .list td {
   text-align: center;
 }
+
 .list {
   text-align: center;
 }
-.result{
+
+.result {
   text-align: center;
   font-size: 2rem;
 }
