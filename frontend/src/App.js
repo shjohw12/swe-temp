@@ -1,5 +1,5 @@
 import "./App.css";
-import "./Left.css"
+import "./Left.css";
 import ProblemList from "./ProblemList";
 import Left from "./Left";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -20,7 +20,7 @@ function App() {
               }
             />
 
-
+            <Route path="/problemlist" element={<ProblemList />} />
             <Route path="/problems/:no" element={<Left />} />
             <Route path="/login" element={<Login />} />
           </Routes>

@@ -78,12 +78,12 @@
   display: flex;
   justify-content: center;
   /* background-image: url("img/intro.png"); */
-  background-color: #E6E6E6;
+  background-color: #e6e6e6;
 }
 
 .header {
   margin: 0px;
-  background-color: #0E151B;
+  background-color: #0e151b;
   color: white;
 }
 
@@ -102,7 +102,7 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  background-color: #0E151B;
+  background-color: #0e151b;
   position: relative;
   margin-top: 35vh;
 }
@@ -189,7 +189,7 @@ body {
 }
 
 .banner {
-  background-color: #0E151B;
+  background-color: #0e151b;
   color: white;
   text-align: center;
 }
@@ -205,4 +205,9 @@ body {
 .result {
   text-align: center;
   font-size: 2rem;
+}
+.con {
+  height: 40vh;
+  width: auto;
+  overflow: auto;
 }
