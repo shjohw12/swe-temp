@@ -1,17 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 
-import Editor, { useMonaco } from "@monaco-editor/react";
+import Editor from "@monaco-editor/react";
 import axios from "axios";
 
 import CodeDiff from "react-code-diff-lite";
 import Result from "./Result";
 
 
-
-import './HHG_main.css'
-import './HHG_problemlist.css'
-import './HHG_right_down.css'
-import './HHG_right_up.css'
 
 // 2번까지는 공개 테스트 케이스, 그 이후는 히든 테스트 케이스
 
@@ -151,6 +146,10 @@ function MyEditor({ no }) {
             }
         ).then(function (res) {
             console.log(res.data);
+
+
+
+
             setTabState(2);
         }).catch(function (error) {
             console.log(error);
@@ -225,20 +224,19 @@ function MyEditor({ no }) {
 
     return (
         <>
-            <div className="up_buttonlist">
-                <button className="blue_button" onClick={codeInit}>초기화</button>
-                <button className="blue_button" onClick={codeSave}>저장</button>
-                <button className="blue_button" onClick={codeLoad}>불러오기</button>
-                <button className="blue_button" onClick={execute}>실행</button>
-                <button className="blue_button" onClick={testCode}>채점</button>
-                <button className="blue_button" onClick={copyCode}>복사</button>
-                <button className="blue_button" onClick={importData}>파일 업로드</button>
-                <button className="red_button" onClick={submit}>제출</button>
+            <button onClick={codeInit}>초기화</button>
+            <button onClick={codeSave}>저장</button>
+            <button onClick={codeLoad}>불러오기</button>
+            <button onClick={execute}>실행</button>
+            <button onClick={testCode}>채점</button>
+            <button onClick={copyCode}>복사</button>
+            <button onClick={importData}>파일 업로드</button>
+            <button onClick={submit}>제출</button>
 
-                <button className="file_button_saved" onClick={() => { preset_id = 1 }} >1</button>
-                <button className="file_button_saved" onClick={() => { preset_id = 2 }} >2</button>
-                <button className="file_button_saved" onClick={() => { preset_id = 3 }} >3</button>
-            </div>
+            <button onClick={() => { preset_id = 1 }} >1</button>
+            <button onClick={() => { preset_id = 2 }} >2</button>
+            <button onClick={() => { preset_id = 3 }} >3</button>
+
             <Editor
                 height="80vh"
                 defaultLanguage="python"
