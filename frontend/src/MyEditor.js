@@ -61,7 +61,7 @@ function MyEditor({ no }) {
         const headers = {
           "Content-type": "application/json",
           Authorization:
-            "Bearer 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",
+            "Bearer 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",
         };
 
         axios
@@ -82,8 +82,6 @@ function MyEditor({ no }) {
             axios
               .get(`http://146.56.165.145:8000/api/answers/${no}`)
               .then(function (res3) {
-                console.log(res3.data);
-                console.log(res.data.userProblemData);
                 setUserScore(res.data.userProblemData.user_score);
                 setEffScore(res.data.efficiency_score);
                 setReadScore(100 + 10 * parseInt(res.data.readability_score));
@@ -184,6 +182,37 @@ function MyEditor({ no }) {
   }
 
   function execute() {
+
+    const headers = {
+      "Content-type": "application/json",
+      Authorization:
+        "Bearer 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",
+    };
+
+
+    axios
+      .post(
+        "https://api.openai.com/v1/completions",
+        {
+          model: "code-davinci-002",
+          prompt: editorRef.current.getValue(),
+          temperature: 0,
+          max_tokens: 64,
+          top_p: 1.0,
+          frequency_penalty: 0.0,
+          presence_penalty: 0.0,
+        },
+        { headers }
+      ).then(function (res) {
+        console.log(res.data);
+        console.log(res.data.choices[0].text);
+        setCodeExplain(res.data.choices[0].text);
+        setTabState(3);
+      }).catch(function (error) {
+        console.log(error);
+      })
+
+
     // const headers = {
     //     'Content-type': 'application/json',
     //     'Authorization': 'Bearer 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',
@@ -270,7 +299,7 @@ function MyEditor({ no }) {
         </button>
       </div>
       <Editor
-        height="80vh"
+        height="10vh"
         defaultLanguage="python"
         defaultValue={userCode}
         onMount={handleEditorDidMount}
